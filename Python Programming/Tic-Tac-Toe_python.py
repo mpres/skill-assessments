@@ -165,29 +165,29 @@ def ComputerMove(grid,comp_symbol):
     #No Victory was not found in a single move, next the computer will go on defense to avoid obvious defeat
     if (grid[0].count('.') == 1 and grid[0].count(user_symbol) == 2):
         grid[0][grid[0].index('.')] = comp_symbol
-        print("row def hit 1 ")
+#        print("row def hit 1 ")
         return
     elif(grid[1].count('.') == 1 and grid[1].count(user_symbol) == 2):
         grid[1][grid[1].index('.')] = comp_symbol 
-        print("row def hit 2 ")
+  #      print("row def hit 2 ")
         return
     elif(grid[2].count('.') == 1 and grid[2].count(user_symbol) == 2):
         grid[2][grid[2].index('.')] = comp_symbol  
-        print("row def hit 3 ")
+  #      print("row def hit 3 ")
         return
         
     #look for columns
     elif (col1.count('.') == 1 and col1.count(user_symbol) == 2):
         grid[col1.index('.')][0] = comp_symbol
-        print("col def hit 1 ")
+  #      print("col def hit 1 ")
         return
     elif (col2.count('.') == 1 and col2.count(user_symbol) == 2):
         grid[col2.index('.')][1] = comp_symbol
-        print("col def hit 2 ")
+  #      print("col def hit 2 ")
         return
     elif (col3.count('.') == 1 and col3.count(user_symbol) == 2):
         grid[col3.index('.')][2] = comp_symbol
-        print("col def hit 3 ")
+  #      print("col def hit 3 ")
         return
         
     #look for diagnos
@@ -195,35 +195,35 @@ def ComputerMove(grid,comp_symbol):
         idx = diag1.index('.')
         if(idx==0):
             grid[0][0] = comp_symbol
-            print("diag def hit 1 ")
+  #          print("diag def hit 1 ")
             return
         elif(idx==1):
             grid[1][1] = comp_symbol
-            print("diag def hit 2 ")
+   #         print("diag def hit 2 ")
             return
         elif(idx==2):
             grid[2][2] = comp_symbol
-            print("diag def hit 3 ")
+   #         print("diag def hit 3 ")
             return
     elif(diag2.count('.') == 1 and diag2.count(user_symbol) == 2):
         idx = diag2.index('.')
         if(idx==0):
             grid[0][2] = comp_symbol
-            print("diag2 def hit 1 ")
+    #        print("diag2 def hit 1 ")
             return
         elif(idx==1):
             grid[1][1] = comp_symbol
-            print("diag2 def hit 2 ")
+     #       print("diag2 def hit 2 ")
             return
         elif(idx==2):
             grid[2][0] = comp_symbol
-            print("diag2 def hit 3 ")
+    #        print("diag2 def hit 3 ")
             return
             
     
     #No obvious defense needed, now we'll place a random tick for the computer
     else:
-        print("Set Random")
+    #    print("Set Random")
         setRandomTic(grid,comp_symbol)
     
 #    else:
@@ -294,7 +294,7 @@ def promptUserMove(grid,user_symbol,round):
         print('Error, this position has already been filled',grid[int(row)][int(col)])
         print('')
         time.sleep(2)
-        promptUserMove(Grid,user_symbol,1)
+        promptUserMove(Grid,user_symbol,round)
     else:
         grid[int(row)][int(col)] = user_symbol
 
